@@ -81,8 +81,6 @@ export class Request {
       return response;
     }
     const error = this.handleResponseError(response);
-    // tslint:disable-next-line:no-console
-    console.log('error', response.body.status, response.statusCode);
     process.nextTick(() => this.error$.next(error));
     throw error;
   }
